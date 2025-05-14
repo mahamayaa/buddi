@@ -1,0 +1,120 @@
+<html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Space+Grotesk:wght@300..700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <script src="JS/script.js"></script>
+    <title>Buddi</title>
+</head>
+
+<body>
+    <div class="container2">
+        <div class="toptext2">
+            <p>Hi! Buddi is here for you <3 </p>
+                    <p style="font-weight: 400;">Let's exercise your breathing!</p>
+        </div>
+
+        <div class="contents2">
+            <div class="breathing">
+                <div class="breathingcontainer">
+                    <!-- <div class="breathe"></div> -->
+                    <div class="blob">
+                        <div class="blur-layer"></div>
+                        <p class="breathe-text" id="breatheText">Breathe in…</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="button2">
+                <a href="grounding1.html"><button>Next</button></a>
+            </div>
+
+            <div class="better">
+                <a href="end2.html">I feel better already.</a>
+            </div>
+
+            <div class="mascotbreathe">
+                <img src="IMAGES/22.png" alt="">
+            </div>
+
+            <div class="circlebreathe"></div>
+
+            <!-- <div class="category-button">
+                <button class="1-button" type="submit" form="form"> Anxious </button>
+                <button class="2-button" type="submit" form="form"> Sad </button>
+                <button class="3-button" type="submit" form="form"> Angry </button>
+                <button class="4-button" type="submit" form="form"> Stressed </button>
+            </div> -->
+
+            <!-- <div class="moodfilter">
+                <div class="filter">
+                    <button>Anxious</button>
+                    <button>Sad</button>
+                    <button>Angry</button>
+                    <button>Stressed</button>
+                </div>
+            </div> -->
+        </div>
+    </div>
+
+    <script>
+        const text = document.getElementById('breatheText');
+        const phases = [
+            { time: 0, label: "Breathe in" },     // 0–4s
+            { time: 4000, label: "Hold" },        // 4–8s
+            { time: 8000, label: "Breathe out" }, // 8–12s
+            { time: 12000, label: "Breathe out" },       // 12–14s
+        ];
+
+        let start = Date.now();
+
+        setInterval(() => {
+            let elapsed = (Date.now() - start) % 14000;
+            for (let i = phases.length - 1; i >= 0; i--) {
+                if (elapsed >= phases[i].time) {
+                    text.textContent = phases[i].label;
+                    break;
+                }
+            }
+        }, 100);
+
+        // // Select all category buttons
+        // const categoryButtons = document.querySelectorAll('.category-button button');
+
+        // // Add event listeners to each button
+        // categoryButtons.forEach((button) => {
+        //     button.addEventListener('click', () => {
+        //         // Check if this button is already active
+        //         if (button.classList.contains('active')) {
+        //             // If active, reset all buttons to normal
+        //             categoryButtons.forEach((btn) => {
+        //                 btn.classList.remove('greyed-out', 'active');
+        //             });
+        //         } else {
+        //             // Otherwise, set this button as active and grey out others
+        //             categoryButtons.forEach((btn) => {
+        //                 if (btn !== button) {
+        //                     btn.classList.add('greyed-out');
+        //                     btn.classList.remove('active');
+        //                 } else {
+        //                     btn.classList.add('active');
+        //                     btn.classList.remove('greyed-out');
+        //                 }
+        //             });
+        //         }
+        //     });
+        // });
+    </script>
+
+</body>
+
+</html>
+
+</html>
